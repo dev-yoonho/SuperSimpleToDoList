@@ -18,6 +18,12 @@ header div:nth-child(2) {
     text-align: center;
 }
 
+.dark-toggle {
+    position: absolute;
+    right: 10px;
+    z-index: 1000;
+}
+
 main {
     padding-top: 60px;
 }
@@ -52,20 +58,41 @@ html, body {
 .container-fluid {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Viewport height만큼의 최소 높이 설정 */
+    min-height: 100vh;
 }
 
 main {
-    flex-grow: 1; /* 중간 컨텐츠가 가능한 한 많은 공간을 차지하도록 설정 */
+    flex-grow: 1;
 }
 
 footer {
-    background-color: #f8f9fa; /* 배경색 설정 */
-    padding: 15px 0; /* 약간의 여백 추가 */
+    background-color: #f8f9fa;
+    padding: 15px 0;
     text-align: center;
 }
 
 footer p {
     margin-bottom: 0;
     font-size: small;
+}
+
+/* 다크 모드 */
+body[data-theme="dark-mode"] {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+
+body[data-theme="dark-mode"] .btn-outline-success {
+    background-color: #104d00;
+    color: #ffffff;
+}
+
+body[data-theme="dark-mode"] .btn-outline-danger {
+    background-color: #660000;
+    color: #ffffff;
+}
+
+body[data-theme="dark-mode"] footer {
+    background-color: #000000;
 }
