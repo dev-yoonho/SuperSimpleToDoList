@@ -8,7 +8,7 @@ let changeTheme = () => {
     localStorage.setItem('theme', newTheme);
 
     console.log('Changing theme to:', newTheme);
-    const newToggleImgSrc = newTheme === "light-mode" ? "img/moon.svg" : "img/sun.svg";
+    const newToggleImgSrc = newTheme === "light-mode" ? "img/moon.svg" : "img/sun.png";
     console.log('New image src:', newToggleImgSrc);
     darkToggleButton.src = newToggleImgSrc;
 }
@@ -18,7 +18,7 @@ window.addEventListener("DOMContentLoaded", () => {
     if (savedTheme) {
         document.body.dataset.theme = savedTheme;
 
-        const initialToggleSrc = savedTheme === "light-mode" ? "img/moon.svg" : "img/sun.svg";
+        const initialToggleSrc = savedTheme === "light-mode" ? "img/moon.svg" : "img/sun.png";
         console.log('Initial image src:', initialToggleSrc);
         darkToggleButton.src = initialToggleSrc;
     } else {
