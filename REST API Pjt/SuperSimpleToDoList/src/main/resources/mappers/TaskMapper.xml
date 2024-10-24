@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.devyoonho.supersimpletodolist.dao.TaskDao">
+    <!-- 할 일 전체 조회 -->
+    <select id="selectAll" resultType="Task">
+        SELECT * FROM task
+    </select>
+
+    <!-- 할 일 개별 조회 -->
+    <select id="selectById" resultType="Task" parameterType="int">
+        SELECT * FROM task
+        WHERE id=#{taskId}
+    </select>
+
+    <!-- 할 일 등록 -->
+    <insert id="insertTask" parameterType="Task">
+        INSERT INTO task (user_id, title, priority)
+        VALUES (#{userId}, #{title}, #{priority})
+    </insert>
+
+    <!-- 할 일 수정 -->
+    <update id="updateTask" parameterType="Task">
+        UPDATE task
+        SET title=#{title}, priority=#{priority}, status=#{status}
+        WHERE id=#{taskId}
+    </update>
+
+    <!-- 할 일 삭제 -->
+    <delete id="deleteTask" parameterType="int">
+        DELETE FROM task
+        WHERE id=#{taskId}
+    </delete>
+</mapper>
